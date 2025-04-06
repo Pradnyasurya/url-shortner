@@ -1,6 +1,6 @@
 package com.surya.urlshortener.domain.entities;
 
-import com.surya.urlshortener.domain.models;
+import com.surya.urlshortener.domain.models.Role;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 
@@ -27,7 +27,7 @@ public class User {
     @ColumnDefault("'ROLE_USER'")
     @Column(name = "role", nullable = false, length = 20)
     @Enumerated(EnumType.STRING)
-    private models.Role role;
+    private Role role;
 
     @ColumnDefault("CURRENT_TIMESTAMP")
     @Column(name = "created_at", nullable = false)
@@ -65,11 +65,11 @@ public class User {
         this.name = name;
     }
 
-    public models.Role getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(models.Role role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 
