@@ -29,8 +29,7 @@
                     updateDeleteButtonState();
 
                     // Update "Select All" checkbox state
-                    const allChecked = Array.from(urlCheckboxes).every(cb => cb.checked);
-                    selectAllCheckbox.checked = allChecked;
+                    selectAllCheckbox.checked = Array.from(urlCheckboxes).every(cb => cb.checked);
                 });
             });
 
@@ -66,7 +65,7 @@
                 <thead>
                 <tr>
                     <th>
-                        <input type="checkbox" id="selectAll" class="form-check-input">
+                        <label for="selectAll"></label><input type="checkbox" id="selectAll" class="form-check-input">
                     </th>
                     <th>Short URL</th>
                     <th>Original URL</th>
@@ -79,8 +78,10 @@
                 <tbody>
                 <tr th:each="url : ${shortUrls.data}">
                     <td>
-                        <input type="checkbox" name="ids" th:value="${url.id}"
-                               class="form-check-input url-checkbox">
+                        <label>
+                            <input type="checkbox" name="ids" th:value="${url.id}"
+                                   class="form-check-input url-checkbox">
+                        </label>
                     </td>
                     <td>
                         <a th:href="@{/s/{key}(key=${url.shortKey})}"

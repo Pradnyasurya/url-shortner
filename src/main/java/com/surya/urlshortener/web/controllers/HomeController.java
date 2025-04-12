@@ -2,16 +2,12 @@ package com.surya.urlshortener.web.controllers;
 
 import com.surya.urlshortener.ApplicationProperties;
 import com.surya.urlshortener.domain.dtos.CreateShortUrlForm;
-import com.surya.urlshortener.domain.entities.ShortUrl;
 import com.surya.urlshortener.domain.exceptions.ShortUrlNotFoundException;
 import com.surya.urlshortener.domain.models.CreateShortUrlCmd;
 import com.surya.urlshortener.domain.models.PagedResult;
 import com.surya.urlshortener.domain.models.ShortUrlDto;
-import com.surya.urlshortener.domain.repositories.ShortUrlRepository;
 import com.surya.urlshortener.domain.services.ShortUrlService;
 import jakarta.validation.Valid;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
